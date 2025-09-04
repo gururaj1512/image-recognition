@@ -305,4 +305,8 @@ def analyze():
     return jsonify({"error": "Invalid file type. Please upload an MP4 or MOV video file."}), 400
 
 if __name__ == '__main__':
+    # For development
     app.run(debug=True, host='0.0.0.0', port=5000)
+else:
+    # For production with gunicorn
+    application = app
